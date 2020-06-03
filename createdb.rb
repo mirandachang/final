@@ -18,7 +18,7 @@ DB.create_table! :restaurants do
   String :neighborhood
   String :location
 end
-DB.create_table! :favorites do
+DB.create_table! :ratings do
   primary_key :id
   foreign_key :restaurant_id
   foreign_key :user_id
@@ -61,7 +61,7 @@ restaurants_table.insert
     neighborhood: "Highland Park",
     location: " ")
 
-events_table.insert(title: "Kaleapolooza", 
-                    description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
-                    date: "July 4",
-                    location: "Nowhere")
+restaurants_table.insert
+    (name: "Dinette", 
+    neighborhood: "East Liberty",
+    location: " ")
