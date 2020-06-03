@@ -21,3 +21,11 @@ after { puts; }                                                                 
 get "/" do
     view 'home'
 end
+
+get "/sign-up" do
+    view 'sign-up'
+end
+
+get "/log-in" do
+    view 'log-in'
+end
