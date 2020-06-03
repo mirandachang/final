@@ -26,13 +26,40 @@ DB.create_table! :favorites do
   Integer :rating
 end
 
-# Insert initial (seed) data
-events_table = DB.from(:events)
+# Google Maps API key: AIzaSyDcs6tXk2TB6lHoFlkAlpVWEkpzMcd36os
 
-events_table.insert(title: "Bacon Burger Taco Fest", 
-                    description: "Here we go again bacon burger taco fans, another Bacon Burger Taco Fest is here!",
-                    date: "June 21",
-                    location: "Kellogg Global Hub")
+# Insert initial (seed) data
+restaurants_table = DB.from(:restaurants)
+
+restaurants_table.insert
+    (name: "Talia", 
+    neighborhood: "Downtown",
+    location: " ")
+
+restaurants_table.insert
+    (name: "DiAnoia's", 
+    neighborhood: "Strip District",
+    location: " ")
+
+restaurants_table.insert
+    (name: "Alta Via", 
+    neighborhood: "Fox Chapel",
+    location: " ")
+
+restaurants_table.insert
+    (name: "Coca Cafe", 
+    neighborhood: "Lawrenceville",
+    location: " ")
+
+restaurants_table.insert
+    (name: "Girasole", 
+    neighborhood: "Shadyside",
+    location: " ")
+
+restaurants_table.insert
+    (name: "Smiling Banana Leaf", 
+    neighborhood: "Highland Park",
+    location: " ")
 
 events_table.insert(title: "Kaleapolooza", 
                     description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
