@@ -15,5 +15,9 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
-# events_table = DB.from(:events)
-# rsvps_table = DB.from(:rsvps)
+restaurants_table = DB.from(:restaurants)
+
+# Home Page
+get "/" do
+    view 'home'
+end
