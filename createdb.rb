@@ -5,20 +5,25 @@ DB = Sequel.connect(connection_string)                                          
 #######################################################################################
 
 # Database schema - this should reflect your domain model
-DB.create_table! :events do
+DB.create_table! :users do
   primary_key :id
-  String :title
-  String :description, text: true
-  String :date
+  foreign_key :restaurant_id
+  String :name
+  String :neighborhood
   String :location
 end
-DB.create_table! :rsvps do
+DB.create_table! :restaurants do
   primary_key :id
-  foreign_key :event_id
-  Boolean :going
   String :name
-  String :email
-  String :comments, text: true
+  String :neighborhood
+  String :location
+end
+DB.create_table! :favorites do
+  primary_key :id
+  foreign_key :restaurant_id
+  foreign_key :user_id
+  String :name
+  Integer :rating
 end
 
 # Insert initial (seed) data
