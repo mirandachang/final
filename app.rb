@@ -32,6 +32,15 @@ get "/sign-up" do
     view 'sign-up'
 end
 
+# When new user signs up
+post "/users/create" do
+    users_table.insert
+        (:name => params["name"],
+        :email => params["email"],
+        :password => BCrypt::Password.create(params["passwrord"]))
+    view '/'
+end
+
 get "/log-in" do
     view 'log-in'
 end
