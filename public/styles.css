@@ -19,5 +19,8 @@ div.container-buttons
     padding-left: 5px;
     text-align: right;}
 
+div.container-map
+    {text-align: center;}
+
 div.col-xl-4.col-sm-6
     {padding-bottom: 15px;}

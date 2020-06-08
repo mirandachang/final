@@ -30,8 +30,8 @@ get "/" do
 end
 
 get "/alta-via" do
-    results = Geocoder.search("44 Fox Chapel Rd, Pittsburgh, PA 15238")
-    @lat_long = results.first.coordinates.join(",")
+    # results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
+    @lat_long = "40.488354, -79.882596"
     view 'alta-via'
 end
 
@@ -51,5 +51,6 @@ get "/log-in" do
 end
 
 get "/log-out" do
+    session[:user_id] = nil
     view 'log-out'
 end
