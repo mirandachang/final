@@ -10,13 +10,11 @@ DB.create_table! :users do
   foreign_key :restaurant_id
   String :name
   String :neighborhood
-  String :location
 end
 DB.create_table! :restaurants do
   primary_key :id
   String :name
   String :neighborhood
-  String :location
 end
 DB.create_table! :ratings do
   primary_key :id
@@ -33,35 +31,28 @@ restaurants_table = DB.from(:restaurants)
 
 restaurants_table.insert
     (name: "Talia", 
-    neighborhood: "Downtown",
-    location: " ")
+    neighborhood: "Downtown")
 
 restaurants_table.insert
     (name: "DiAnoia's", 
-    neighborhood: "Strip District",
-    location: " ")
+    neighborhood: "Strip District")
 
 restaurants_table.insert
     (name: "Alta Via", 
-    neighborhood: "Fox Chapel",
-    location: " ")
+    neighborhood: "Fox Chapel")
 
 restaurants_table.insert
     (name: "Coca Cafe", 
-    neighborhood: "Lawrenceville",
-    location: " ")
+    neighborhood: "Lawrenceville")
 
 restaurants_table.insert
     (name: "Girasole", 
-    neighborhood: "Shadyside",
-    location: " ")
+    neighborhood: "Shadyside")
 
 restaurants_table.insert
     (name: "Smiling Banana Leaf", 
-    neighborhood: "Highland Park",
-    location: " ")
+    neighborhood: "Highland Park")
 
 restaurants_table.insert
     (name: "Dinette", 
-    neighborhood: "East Liberty",
-    location: " ")
+    neighborhood: "East Liberty")

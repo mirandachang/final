@@ -22,6 +22,10 @@ get "/" do
     view 'home'
 end
 
+get "/alta-via" do
+    view 'alta-via'
+end
+
 get "/sign-up" do
     view 'sign-up'
 end

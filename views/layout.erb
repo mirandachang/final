@@ -21,8 +21,13 @@
     <title>Eating Pittsburgh</title>
   </head>
   <body>
- 
-      <%= yield %>
+        <!--Login & Sign-Up Buttons-->
+        <div class="container-buttons">
+            <a class="btn btn-primary" href="/sign-up" role="button">Sign Up</a>
+            <a class="btn btn-primary" href="/log-in" role="button">Log In</a>
+        </div>
+      
+        <%= yield %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

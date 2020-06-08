@@ -6,7 +6,18 @@ h3.centered
     {text-align: center;}
 
 h4
-    {text-align: center;}
+    {text-align: center;
+    font-size: 20px;}
 
 div.container
     {max-width: 1700px;}
+
+div.container-buttons
+    {padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: right;}
+
+div.col-xl-4.col-sm-6
+    {padding-bottom: 15px;}
