@@ -23,6 +23,8 @@ get "/" do
 end
 
 get "/alta-via" do
+    results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
+    @lat_long = results.first.coordinates.join(",")
     view 'alta-via'
 end
 
