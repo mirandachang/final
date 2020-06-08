@@ -16,6 +16,13 @@ after { puts; }                                                                 
 #######################################################################################
 
 restaurants_table = DB.from(:restaurants)
+users_table = DB.from(:users)
+ratings_table = DB.from(:ratings)
+
+before do  
+    @current_user = users_table.where(:id => session[:user_id]).to_a[0]
+    puts @current_user.inspect
+end
 
 # Home Page
 get "/" do
@@ -23,7 +30,7 @@ get "/" do
 end
 
 get "/alta-via" do
-    results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
+    results = Geocoder.search("44 Fox Chapel Rd, Pittsburgh, PA 15238")
     @lat_long = results.first.coordinates.join(",")
     view 'alta-via'
 end
@@ -34,13 +41,15 @@ end
 
 # When new user signs up
 post "/users/create" do
-    users_table.insert
-        (:name => params["name"],
-        :email => params["email"],
-        :password => BCrypt::Password.create(params["passwrord"]))
+    puts params.inspect
+    users_table.insert(:name => params["name"], :email => params["email"], :password => BCrypt::Password.create(params["password"]))
     view '/create_user'
 end
 
 get "/log-in" do
     view 'log-in'
+end
+
+get "/log-out" do
+    view 'log-out'
 end

@@ -31,16 +31,16 @@ end
 # Insert initial (seed) data
 restaurants_table = DB.from(:restaurants)
 
-restaurants_table.insert (name: "Talia", neighborhood: "Downtown")
+restaurants_table.insert(name: "Talia", neighborhood: "Downtown")
 
-restaurants_table.insert (name: "DiAnoia's", neighborhood: "Strip District")
+restaurants_table.insert(name: "DiAnoia's", neighborhood: "Strip District")
 
-restaurants_table.insert (name: "Alta Via", neighborhood: "Fox Chapel")
+restaurants_table.insert(name: "Alta Via", neighborhood: "Fox Chapel")
 
-restaurants_table.insert (name: "Coca Cafe", neighborhood: "Lawrenceville")
+restaurants_table.insert(name: "Coca Cafe", neighborhood: "Lawrenceville")
 
-restaurants_table.insert (name: "Girasole", neighborhood: "Shadyside")
+restaurants_table.insert(name: "Girasole", neighborhood: "Shadyside")
 
-restaurants_table.insert (name: "Smiling Banana Leaf", neighborhood: "Highland Park")
+restaurants_table.insert(name: "Smiling Banana Leaf", neighborhood: "Highland Park")
 
-restaurants_table.insert (name: "Dinette", neighborhood: "East Liberty")
+restaurants_table.insert(name: "Dinette", neighborhood: "East Liberty")
