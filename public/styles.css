@@ -2,5 +2,11 @@ h1
     {text-align: center;
     font-size: 50px;}
 
+h3.centered
+    {text-align: center;}
+
+h4
+    {text-align: center;}
+
 div.container
     {max-width: 1700px;}
