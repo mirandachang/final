@@ -15,7 +15,7 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
-# restaurants_table = DB.from(:restaurants)
+restaurants_table = DB.from(:restaurants)
 
 # Home Page
 get "/" do
@@ -38,7 +38,7 @@ post "/users/create" do
         (:name => params["name"],
         :email => params["email"],
         :password => BCrypt::Password.create(params["passwrord"]))
-    view '/'
+    view '/create_user'
 end
 
 get "/log-in" do
