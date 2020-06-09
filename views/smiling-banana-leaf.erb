@@ -12,26 +12,26 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="container-map">
-                <h2>Average User Rating: <%= @avg_talia_rating %></h2>
+                <h2>Average User Rating: <%= @avg_smiling_banana_leaf_rating %></h2>
                 <br>
                 <iframe
                     width="600"
                     height="450"
                     frameborder="0" 
                     style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDcs6tXk2TB6lHoFlkAlpVWEkpzMcd36os&q=<%= @restaurant %>,Pittsburgh+PA" allowfullscreen>
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDcs6tXk2TB6lHoFlkAlpVWEkpzMcd36os&q=Smiling+Banana+Leaf,Pittsburgh+PA" allowfullscreen>
                 </iframe>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="container">
-                <a href="https://www.taliapgh.com/">Restaurant Website</a>
+                <a href="https://www.smilingbananaleaf.com/">Restaurant Website</a>
                 <br>
                 <br>
-                <i class="fas fa-phone-square-alt"></i><a href="tel:+14124568214"> Click to Call</a>
+                <i class="fas fa-phone-square-alt"></i><a href="tel:+14123623200"> Click to Call</a>
                 <br>
                 <br>
-                <form action="/ratings/create/talia" method="post"
+                <form action="/ratings/create/smiling-banana-leaf" method="post"
                     <div class="form-group">
                         <label>Your Rating (1 to 10)</label>
                         <input type="integer" class="form-control" name="rating">

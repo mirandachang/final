@@ -91,11 +91,24 @@ get "/girasole" do
     view 'girasole'
 end
 
-# receiving new rating for Coca Cafe
-post "/ratings/create/coca-cafe" do
+# receiving new rating for Girasole
+post "/ratings/create/girasole" do
     puts params.inspect
-    ratings_table.insert(:name => "Coca Cafe", :rating => params["rating"])
-    view 'coca-cafe'
+    ratings_table.insert(:name => "Girasole", :rating => params["rating"])
+    view 'girasole'
+end
+
+get "/smiling-banana-leaf" do
+    @avg_smiling_banana_leaf_rating = ratings_table.where(:name=>"Smiling Banana Leaf").avg(:rating)
+    @restaurant = "Smiling Banana Leaf"
+    view 'smiling-banana-leaf'
+end
+
+# receiving new rating for Girasole
+post "/ratings/create/smiling-banana-leaf" do
+    puts params.inspect
+    ratings_table.insert(:name => "Smiling Banana Leaf", :rating => params["rating"])
+    view 'smiling-banana-leaf'
 end
 
 get "/sign-up" do
