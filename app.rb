@@ -32,6 +32,7 @@ end
 get "/alta-via" do
     # results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
     @lat_long = "40.488354, -79.882596"
+    @avg_alta_via_rating = ratings_table.average(:rating).where(:name=="Alta Via")
     view 'alta-via'
 end
 
