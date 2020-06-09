@@ -21,7 +21,6 @@ end
 DB.create_table! :ratings do
   primary_key :id
   foreign_key :restaurant_id
-  foreign_key :user_id
   String :name
   Integer :rating
 end
@@ -30,17 +29,14 @@ end
 
 # Insert initial (seed) data
 restaurants_table = DB.from(:restaurants)
-
 restaurants_table.insert(name: "Talia", neighborhood: "Downtown")
-
 restaurants_table.insert(name: "DiAnoia's", neighborhood: "Strip District")
-
 restaurants_table.insert(name: "Alta Via", neighborhood: "Fox Chapel")
-
 restaurants_table.insert(name: "Coca Cafe", neighborhood: "Lawrenceville")
-
 restaurants_table.insert(name: "Girasole", neighborhood: "Shadyside")
-
 restaurants_table.insert(name: "Smiling Banana Leaf", neighborhood: "Highland Park")
-
 restaurants_table.insert(name: "Dinette", neighborhood: "East Liberty")
+
+ratings_table = DB.from(:ratings)
+ratings_table.insert(name: "Alta Via", rating: 10)
+ratings_table.insert(name: "Alta Via", rating: 8)
