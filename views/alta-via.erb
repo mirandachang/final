@@ -1,10 +1,10 @@
-<title>Alta Via from Eating Pittsburgh</title>
+<title><%= @restaurant %> from Eating Pittsburgh</title>
 
 <body>
 <!--Hero-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>Alta Via</h1>
+            <h1><%= @restaurant %></h1>
         </div>
     </div>
 
@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="container-map">
-                <!--SELECT AVG (:rating) FROM ratings WHERE (:name)=="Alta Via"-->
+                <!--SELECT AVG (:rating) FROM ratings WHERE (:name)=="<%= @restaurant %>"-->
                 <h2>Average User Rating: <%= @avg_alta_via_rating %></h2>
                 <br>
                 <iframe
