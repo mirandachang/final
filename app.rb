@@ -29,6 +29,21 @@ get "/" do
     view 'home'
 end
 
+get "/talia" do
+    @lat_long = "40.441260, -79.996794"
+    @avg_talia_rating = ratings_table.where(:name=>"Talia").avg(:rating)
+    @restaurant = "Talia"
+    view 'talia'
+end
+
+# receiving new rating for Talia
+post "/ratings/create/talia" do
+    puts params.inspect
+    ratings_table.insert(:name => "Talia", :rating => params["rating"])
+    view 'talia'
+# kind of sketchy experience because page continues to display but without new avg rating - following MVP launch, would cause page to refresh and rating submission to be hidden and instead display a thank you for your rating message
+end
+
 get "/alta-via" do
     # results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
     @lat_long = "40.488354, -79.882596"
@@ -37,7 +52,7 @@ get "/alta-via" do
 end
 
 # receiving new rating for Alta Via
-post "/ratings/create" do
+post "/ratings/create/alta-via" do
     puts params.inspect
     ratings_table.insert(:name => "Alta Via", :rating => params["rating"])
     view 'alta-via'
