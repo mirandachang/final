@@ -72,6 +72,19 @@ post "/ratings/create/alta-via" do
     view 'alta-via'
 end
 
+get "/coca-cafe" do
+    @avg_coca_cafe_rating = ratings_table.where(:name=>"Coca Cafe").avg(:rating)
+    @restaurant = "Coca Cafe"
+    view 'coca-cafe'
+end
+
+# receiving new rating for Alta Via
+post "/ratings/create/coca-cafe" do
+    puts params.inspect
+    ratings_table.insert(:name => "Coca Cafe", :rating => params["rating"])
+    view 'coca-cafe'
+end
+
 get "/sign-up" do
     view 'sign-up'
 end
