@@ -30,7 +30,7 @@ get "/" do
 end
 
 get "/talia" do
-    @avg_talia_rating = ratings_table.where(:name=>"Talia").avg(:rating)
+    @avg_talia_rating = ratings_table.where(:name=>"Talia").avg(:rating).to_f
     @restaurant = "Talia"
     view 'talia'
 end
