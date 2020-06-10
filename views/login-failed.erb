@@ -1,0 +1,29 @@
+<title>Login Failed - Eating Pittsburgh</title>
+
+<body>
+
+<!--Hero-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Sorry, that did not work.</h1>
+        </div>
+    </div>
+
+<h1>Try again or click "Sign Up" if you are trying to create an account.</h1>
+
+<!--Login Fields-->
+<div class="container">
+    <form action="/logins/create" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+</div>
+
+</body>
