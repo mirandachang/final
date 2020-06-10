@@ -11,7 +11,6 @@ DB.create_table! :users do
   String :name
   String :email
   String :password
-  String :neighborhood
 end
 DB.create_table! :restaurants do
   primary_key :id
