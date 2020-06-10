@@ -1,0 +1,3 @@
+Live address: https://warm-coast-67823.herokuapp.com/
+
+Building off of my excitement in project 1 at sharing the Pittsburgh restaurant scene, I decided to allow users to submit a rating for the restaurants they have visited. I kept it pretty skinny for the MVP; if I were to continue working on this site, I would want to enable users to view neighborhood pages with restaurants in the selected neighborhood, add in cuisine categories like I'd had in the first project, include logic that only allows a given user to rate each restaurant once, and only allow authenticated users to rate restaurants. I would also be interested in allowing users to submit photos and in using another of the Google APIs to display images of each restaurant and the street view of each.
