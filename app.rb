@@ -44,7 +44,7 @@ post "/ratings/create/talia" do
 end
 
 get "/dianoias" do
-    @avg_dianoias_rating = ratings_table.where(:name=>"DiAnoia's").avg(:rating)
+    @avg_dianoias_rating = ratings_table.where(:name=>"DiAnoia's").avg(:rating).to_f
     @restaurant = "DiAnoia's"
     view 'dianoias'
 end
@@ -57,7 +57,7 @@ post "/ratings/create/dianoias" do
 end
 
 get "/alta-via" do
-    @avg_alta_via_rating = ratings_table.where(:name=>"Alta Via").avg(:rating)
+    @avg_alta_via_rating = ratings_table.where(:name=>"Alta Via").avg(:rating).to_f
     @restaurant = "Alta Via"
     view 'alta-via'
 end
@@ -70,7 +70,7 @@ post "/ratings/create/alta-via" do
 end
 
 get "/coca-cafe" do
-    @avg_coca_cafe_rating = ratings_table.where(:name=>"Coca Cafe").avg(:rating)
+    @avg_coca_cafe_rating = ratings_table.where(:name=>"Coca Cafe").avg(:rating).to_f
     @restaurant = "Coca Cafe"
     view 'coca-cafe'
 end
@@ -83,7 +83,7 @@ post "/ratings/create/coca-cafe" do
 end
 
 get "/girasole" do
-    @avg_girasole_rating = ratings_table.where(:name=>"Girasole").avg(:rating)
+    @avg_girasole_rating = ratings_table.where(:name=>"Girasole").avg(:rating).to_f
     @restaurant = "Girasole"
     view 'girasole'
 end
@@ -96,7 +96,7 @@ post "/ratings/create/girasole" do
 end
 
 get "/smiling-banana-leaf" do
-    @avg_smiling_banana_leaf_rating = ratings_table.where(:name=>"Smiling Banana Leaf").avg(:rating)
+    @avg_smiling_banana_leaf_rating = ratings_table.where(:name=>"Smiling Banana Leaf").avg(:rating).to_f
     @restaurant = "Smiling Banana Leaf"
     view 'smiling-banana-leaf'
 end
@@ -109,7 +109,7 @@ post "/ratings/create/smiling-banana-leaf" do
 end
 
 get "/dinette" do
-    @avg_dinette_rating = ratings_table.where(:name=>"Dinette").avg(:rating)
+    @avg_dinette_rating = ratings_table.where(:name=>"Dinette").avg(:rating).to_f
     @restaurant = "Dinette"
     view 'dinette'
 end
