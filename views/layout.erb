@@ -23,14 +23,27 @@
   <body>
         <!--Login & Sign-Up Buttons-->
         <div class="container-buttons">
-            <% if @current_user %>
-                Hello, <%= @current_user[:name] %>
-                <div class="divider"></div>
+            <% if @current_page == "logout" || @current_page == "sign-up" || @current_page == "sign-up-successful" %>
                 <a href="/"><i class="fas fa-home fa-2x"> </i></a>
+            <% elsif @current_page == "login" %>
+                <a href="/"><i class="fas fa-home fa-2x"> </i></a>
+                &nbsp;
+                &nbsp;
+                <a class="btn btn-primary" href="/sign-up" role="button">Sign Up</a>
+            <% elsif @current_page == "login-successful" || @current_user %>
+                Hello, <%= @current_user[:name] %>
+                &nbsp;
+                &nbsp;
+                <a href="/"><i class="fas fa-home fa-2x"> </i></a>
+                &nbsp;
+                &nbsp;
                 <a class="btn btn-primary" href="/log-out" role="button">Log Out</a>
             <% else %>
                 <a href="/"><i class="fas fa-home fa-2x"> </i></a>
+                &nbsp;
+                &nbsp;
                 <a class="btn btn-primary" href="/sign-up" role="button">Sign Up</a>
+                &nbsp;
                 <a class="btn btn-primary" href="/log-in" role="button">Log In</a>
             <% end %>
         </div>

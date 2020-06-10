@@ -122,6 +122,7 @@ post "/ratings/create/dinette" do
 end
 
 get "/sign-up" do
+    @current_page = "sign-up"
     view 'sign-up'
 end
 
@@ -129,10 +130,14 @@ end
 post "/users/create" do
     puts params.inspect
     users_table.insert(:name => params["name"], :email => params["email"], :password => BCrypt::Password.create(params["password"]))
+    @current_page = "sign-up-successful"
+    user = users_table.where(:email => params["email"]).to_a[0]
+    session[:user_id] = user[:id]
     view '/create_user'
 end
 
 get "/log-in" do
+    @current_page = "login"
     view 'log-in'
 end
 
@@ -145,16 +150,21 @@ post "/logins/create" do
         puts user.inspect
         if BCrypt::Password.new(user[:password]) == password_entered
             session[:user_id] = user[:id]
+            @current_user = users_table.where(:id => session[:user_id]).to_a[0]
+            @current_page = "login-successful"
             view "login-successful"
         else
+            @current_page = "login-failed"
             view "login-failed"
         end
     else 
+        @current_page = "login-failed"
         view "login-failed"
     end
 end
 
 get "/log-out" do
+    @current_page = "logout"
     session[:user_id] = nil
     view 'log-out'
 end
