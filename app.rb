@@ -29,8 +29,7 @@ get "/" do
     view 'home'
 end
 
-get "/talia" do
-    @lat_long = "40.441260, -79.996794"
+get "/restaurants/talia" do
     @avg_talia_rating = ratings_table.where(:name=>"Talia").avg(:rating)
     @restaurant = "Talia"
     view 'talia'
@@ -44,7 +43,7 @@ post "/ratings/create/talia" do
 # kind of sketchy experience because page continues to display but without new avg rating - following MVP launch, would cause page to refresh and rating submission to be hidden and instead display a thank you for your rating message
 end
 
-get "/dianoias" do
+get "/restaurants/dianoias" do
     @avg_dianoias_rating = ratings_table.where(:name=>"DiAnoia's").avg(:rating)
     @restaurant = "DiAnoia's"
     view 'dianoias'
@@ -57,9 +56,7 @@ post "/ratings/create/dianoias" do
     view 'dianoias'
 end
 
-get "/alta-via" do
-    # results = Geocoder.search("46 Fox Chapel Rd, Pittsburgh, PA 15238")
-    @lat_long = "40.488354, -79.882596"
+get "/restaurants/alta-via" do
     @avg_alta_via_rating = ratings_table.where(:name=>"Alta Via").avg(:rating)
     @restaurant = "Alta Via"
     view 'alta-via'
@@ -72,7 +69,7 @@ post "/ratings/create/alta-via" do
     view 'alta-via'
 end
 
-get "/coca-cafe" do
+get "/restaurants/coca-cafe" do
     @avg_coca_cafe_rating = ratings_table.where(:name=>"Coca Cafe").avg(:rating)
     @restaurant = "Coca Cafe"
     view 'coca-cafe'
@@ -85,7 +82,7 @@ post "/ratings/create/coca-cafe" do
     view 'coca-cafe'
 end
 
-get "/girasole" do
+get "/restaurants/girasole" do
     @avg_girasole_rating = ratings_table.where(:name=>"Girasole").avg(:rating)
     @restaurant = "Girasole"
     view 'girasole'
@@ -98,7 +95,7 @@ post "/ratings/create/girasole" do
     view 'girasole'
 end
 
-get "/smiling-banana-leaf" do
+get "/restaurants/smiling-banana-leaf" do
     @avg_smiling_banana_leaf_rating = ratings_table.where(:name=>"Smiling Banana Leaf").avg(:rating)
     @restaurant = "Smiling Banana Leaf"
     view 'smiling-banana-leaf'
@@ -111,7 +108,7 @@ post "/ratings/create/smiling-banana-leaf" do
     view 'smiling-banana-leaf'
 end
 
-get "/dinette" do
+get "/restaurants/dinette" do
     @avg_dinette_rating = ratings_table.where(:name=>"Dinette").avg(:rating)
     @restaurant = "Dinette"
     view 'dinette'
