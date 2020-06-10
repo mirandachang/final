@@ -136,6 +136,24 @@ get "/log-in" do
     view 'log-in'
 end
 
+post "/logins/create" do
+    puts params
+    email_entered = params["email"]
+    password_entered = params["password"]
+    user = users_table.where(:email => email_entered).to_a[0]
+    if user
+        puts user.inspect
+        if BCrypt::Password.new(user[:password]) == password_entered
+            session[:user_id] = user[:id]
+            view "login-successful"
+        else
+            view "login-failed"
+        end
+    else 
+        view "login-failed"
+    end
+end
+
 get "/log-out" do
     session[:user_id] = nil
     view 'log-out'
